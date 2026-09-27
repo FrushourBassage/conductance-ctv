@@ -1,0 +1,17 @@
+# Dataset and resource links, with the version, licence and what was checked.
+# Rewritten by `python -m conductance_ctv.cli.verify`; only entries whose live
+# content matched the expected resource are listed.
+
+name: TotalSegmentator CT dataset
+version: 2.0.1
+licence: CC BY 4.0
+role: abdominal vascular labels for pretraining the segmentation backbone
+url: https://doi.org/10.5281/zenodo.10047292
+checked: HTTP 200, page content matched
+
+name: AbdomenAtlas 1.0
+version: 1.0
+licence: see the licence stated at the repository
+role: abdominal CT volumes and organ labels for pretraining
+url: https://github.com/MrGiovanni/AbdomenAtlas
+checked: HTTP 200, page content matched

@@ -1,0 +1,22 @@
+# Anchored so the cohort root and the source package directory can coexist.
+/data/
+/models/*
+/runs/
+/reports/
+/logs/
+*.pt
+*.npz
+*.nii
+*.nii.gz
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+.DS_Store

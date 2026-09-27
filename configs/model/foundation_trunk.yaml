@@ -1,0 +1,15 @@
+# Encoder family and its width multiplier. Table 1 reports the parameter total of
+# each family without its per-layer widths, so the width is the free variable and
+# the reported total is the constraint. The multiplier below is the resolved
+# bracket: resolve_width_bracket returns the nearer of the two achievable totals
+# around the reported one, and the measured count is always reported beside it.
+encoder: foundation_trunk
+family: foundation
+width_mult: 3.8477
+decoder_width_mult: 0.07813
+reported_params_millions: 131.0
+# The full network total Table 1 reports for the proposed configuration.
+reported_total_millions: 133.6
+lumen_classes: 2
+deep_supervision: false
+freeze_encoder: false

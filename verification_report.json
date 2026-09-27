@@ -1,0 +1,1247 @@
+{
+  "release": "conductance-ctv",
+  "overall_status": "PARTIALLY_VERIFIED",
+  "code_status": "VERIFIED",
+  "paper_status": "VERIFIED",
+  "environment": {
+    "python": "3.14.0",
+    "platform": "macOS-26.0-arm64-arm-64bit-Mach-O",
+    "numpy": "2.4.3",
+    "torch": "2.11.0",
+    "cuda_available": false,
+    "device_count": 0,
+    "openmp_threads": "unset"
+  },
+  "summary": {
+    "overall_status": "PARTIALLY_VERIFIED",
+    "code_status": "VERIFIED",
+    "paper_status": "VERIFIED",
+    "by_status": {
+      "PASS": 49,
+      "NOT_RUN": 5
+    },
+    "by_family": {
+      "paper": {
+        "PASS": 34
+      },
+      "code": {
+        "PASS": 15,
+        "NOT_RUN": 5
+      }
+    },
+    "code_failures": [],
+    "paper_failures": [],
+    "outstanding": [
+      "clinical_cohort_values",
+      "pretraining_run",
+      "gpu_scale_run",
+      "container_build",
+      "reader_arm_human"
+    ],
+    "checks": 54
+  },
+  "checks": [
+    {
+      "name": "solver_rectangle_series",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the solved conductance of a rectangle matches its separable Fourier series and refines at the stencil's order",
+      "evidence": {
+        "rows": [
+          {
+            "factor": 1.0,
+            "step_mm": 1.0,
+            "effective_half_extent_mm": 13.0,
+            "solved": 15983.192028160363,
+            "series": 16060.074557245567,
+            "relative_error": 0.004787183821043835
+          },
+          {
+            "factor": 2.0,
+            "step_mm": 0.5,
+            "effective_half_extent_mm": 12.75,
+            "solved": 14841.321129534292,
+            "series": 14859.865788185849,
+            "relative_error": 0.001247969457860175
+          },
+          {
+            "factor": 4.0,
+            "step_mm": 0.25,
+            "effective_half_extent_mm": 12.625,
+            "solved": 14281.09353572748,
+            "series": 14285.639782956927,
+            "relative_error": 0.0003182389657389594
+          }
+        ],
+        "observed_order": 1.9395945776749148,
+        "tolerance": 0.01
+      }
+    },
+    {
+      "name": "manufactured_solution",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the solved field converges to the manufactured solution at the second order of the stencil",
+      "evidence": {
+        "rows": [
+          {
+            "nodes": 8.0,
+            "step": 0.1111111111111111,
+            "max_absolute_error": 0.00990802318062245,
+            "iterations": 58.0
+          },
+          {
+            "nodes": 16.0,
+            "step": 0.058823529411764705,
+            "max_absolute_error": 0.002826502859623381,
+            "iterations": 96.0
+          },
+          {
+            "nodes": 32.0,
+            "step": 0.030303030303030304,
+            "max_absolute_error": 0.0007538814207855848,
+            "iterations": 165.0
+          }
+        ],
+        "observed_order_first": 1.9722119446041686,
+        "observed_order_second": 1.9924195995797092
+      }
+    },
+    {
+      "name": "shape_factor_range",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the elliptic shape factor spans about 1.8 to 3.4 over the quoted axis-ratio range and the inversion is exact",
+      "evidence": {
+        "shape_factor_at_0.15": 3.408333333333333,
+        "shape_factor_at_0.30": 1.8166666666666669,
+        "inverted_ratio_at_low": 0.1499999999999999,
+        "inverted_ratio_at_high": 0.30000000000000004
+      }
+    },
+    {
+      "name": "polya_szego_bounds",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the disc attains the upper bound within the grid, and each channel of a septum carries only the single channel's grid excess above the channel floor",
+      "evidence": {
+        "rows": [
+          {
+            "shape": "disc_radius_20mm",
+            "step_mm": 0.5,
+            "area": 1296.75,
+            "conductance": 65123.98491032325,
+            "upper_bound": 66907.16890756575,
+            "ratio_to_bound": 0.9733483866324396,
+            "shape_factor": 1.027381371083142
+          },
+          {
+            "shape": "disc_radius_20mm",
+            "step_mm": 0.25,
+            "area": 1275.1875,
+            "conductance": 63824.40621923119,
+            "upper_bound": 64700.58897905479,
+            "ratio_to_bound": 0.9864578858763211,
+            "shape_factor": 1.0137280205445858
+          },
+          {
+            "shape": "septum_2_channels",
+            "step_mm": 0.5,
+            "area": 1861.5,
+            "conductance": 66873.3659981644,
+            "channel_floor": 68937.61047522449,
+            "ratio_to_floor": 0.9700563384365932,
+            "shape_factor": 2.0617359227025225,
+            "channels": 2.0
+          },
+          {
+            "shape": "septum_3_channels",
+            "step_mm": 0.5,
+            "area": 1883.25,
+            "conductance": 45348.10453030435,
+            "channel_floor": 47038.648778555355,
+            "ratio_to_floor": 0.9640605269889956,
+            "shape_factor": 3.111837811023917,
+            "channels": 3.0
+          },
+          {
+            "shape": "septum_4_channels",
+            "step_mm": 0.5,
+            "area": 1885.0,
+            "conductance": 33899.70812937127,
+            "channel_floor": 35344.582666731236,
+            "ratio_to_floor": 0.9591203395727181,
+            "shape_factor": 4.170488138935698,
+            "channels": 4.0
+          }
+        ],
+        "single_channel_excess": 0.021428612771513533,
+        "per_channel": [
+          {
+            "channels": 2.0,
+            "shape_factor_per_channel": 1.0308679613512612,
+            "excess": 0.03086796135126124
+          },
+          {
+            "channels": 3.0,
+            "shape_factor_per_channel": 1.0372792703413056,
+            "excess": 0.037279270341305626
+          },
+          {
+            "channels": 4.0,
+            "shape_factor_per_channel": 1.0426220347339246,
+            "excess": 0.04262203473392456
+          }
+        ]
+      }
+    },
+    {
+      "name": "series_resistance_arithmetic",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the series sum matches a hand-computed value and the occluded sample is reported as length rather than resistance",
+      "evidence": {
+        "observed": 0.7000000000000001,
+        "expected": 0.7000000000000001,
+        "occlusion_length_mm": 2.0
+      }
+    },
+    {
+      "name": "dimensionless_invariance",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "a threefold isotropic rescaling leaves the shape factor and the resistance ratio unchanged, scales the area by nine and scales the weighted length by three",
+      "evidence": {
+        "area_ratio": 8.602251407129456,
+        "conductance_ratio": 73.89759644197531,
+        "shape_factor_ratio": 1.0013685537061385,
+        "resistance_ratio_change": -4.440892098500626e-16,
+        "weighted_length_ratio": 3.0000000000000004,
+        "dimensionless_change": 0.0013685537061385311,
+        "absolute_change": 0.08768399454351472
+      }
+    },
+    {
+      "name": "star_selection",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the descriptor location follows the conductance minimum while the area minimum is reported separately",
+      "evidence": {
+        "conductance_star_index": 3,
+        "area_star_index": 2
+      }
+    },
+    {
+      "name": "descriptor_layout",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the descriptor vector carries the seven listed fields for each of the three segments",
+      "evidence": {
+        "fields": [
+          "minimum_luminal_area",
+          "minimum_conductance_arclength",
+          "shape_factor",
+          "channel_count",
+          "series_resistance",
+          "resistance_ratio",
+          "conductance_weighted_length"
+        ],
+        "segments": [
+          "CIV",
+          "EIV",
+          "CFV"
+        ],
+        "vector_length": 21,
+        "cohort_limbs": 10
+      }
+    },
+    {
+      "name": "lesion_type_definitions",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "compression is a single slit channel, collateralised compression adds channels, the post-thrombotic span is septated and the occlusive span carries no flow",
+      "evidence": {
+        "rows": [
+          {
+            "type": 1,
+            "description": "obstructive compression without thrombus",
+            "minimum_area": 32.54973939826538,
+            "minimum_conductance": 19.8379247073998,
+            "channels_at_lesion": [
+              1
+            ],
+            "occluded_slices": 0
+          },
+          {
+            "type": 2,
+            "description": "obstructive compression with collateral development",
+            "minimum_area": 53.75548980999648,
+            "minimum_conductance": 19.8379247073998,
+            "channels_at_lesion": [
+              4
+            ],
+            "occluded_slices": 0
+          },
+          {
+            "type": 3,
+            "description": "post-thrombotic stenosis from previous thrombosis",
+            "minimum_area": 70.28344711774032,
+            "minimum_conductance": 174.32147630939863,
+            "channels_at_lesion": [
+              2,
+              3,
+              4
+            ],
+            "occluded_slices": 0
+          },
+          {
+            "type": 4,
+            "description": "complete obstruction",
+            "minimum_area": 0.0,
+            "minimum_conductance": 0.0,
+            "channels_at_lesion": [
+              0
+            ],
+            "occluded_slices": 25
+          }
+        ]
+      }
+    },
+    {
+      "name": "segment_units",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the centreline is labelled with the three anatomical segments and each yields its own descriptor block",
+      "evidence": {
+        "samples_per_segment": {
+          "0": 45,
+          "1": 39,
+          "2": 28
+        },
+        "descriptor_segments": [
+          "CIV",
+          "EIV",
+          "CFV"
+        ],
+        "cohort_limbs": 6
+      }
+    },
+    {
+      "name": "clustered_resampling",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "resampling patients rather than limbs widens the interval on a cohort with two-limbed patients",
+      "evidence": {
+        "clustered_half_width": 0.012228175172959321,
+        "limb_half_width": 0.012019075364474052,
+        "inflation": 1.0173973290077976,
+        "two_limb_patient_share": 0.7,
+        "clustered_estimate": 0.9859132826913732
+      }
+    },
+    {
+      "name": "prespecified_constants",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the four pre-specified criteria and the primary MCID are carried and the decision rule reproduces its own definition",
+      "evidence": {
+        "criteria": {
+          "external_macro_auroc_floor": 0.9,
+          "minimal_luminal_area_icc_floor": 0.9,
+          "management_relevant_change_floor": 0.1,
+          "reader_kappa_non_inferiority_margin": 0.05
+        },
+        "mcid": 0.05,
+        "calls": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "threshold_band": {
+          "sensitivity_range": 0.0,
+          "specificity_range": 0.3333333333333333,
+          "youden_range": 0.33333333333333326
+        }
+      }
+    },
+    {
+      "name": "per_type_reporting",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the third table carries four per-type columns and the macro aggregate",
+      "evidence": {
+        "columns": [
+          "method",
+          "auc_I",
+          "auc_II",
+          "auc_III",
+          "auc_IV",
+          "macro_auroc",
+          "macro_f1",
+          "kappa",
+          "limbs"
+        ],
+        "row_keys": [
+          "auc_I",
+          "auc_II",
+          "auc_III",
+          "auc_IV",
+          "kappa",
+          "limbs",
+          "macro_auroc",
+          "macro_f1",
+          "method"
+        ]
+      }
+    },
+    {
+      "name": "paired_comparisons",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the protocol compares the proposed model against the best unconstrained comparator",
+      "evidence": {
+        "paired": {
+          "comparator": "best comparator",
+          "metric": "macro_auroc",
+          "delong": {
+            "auc_first": 1.0,
+            "auc_second": 1.0,
+            "difference": 0.0,
+            "standard_error": 0.0,
+            "z": 0.0,
+            "p_value": 1.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0
+          },
+          "mcnemar": {
+            "first_only": 0.0,
+            "second_only": 0.0,
+            "statistic": 0.0,
+            "p_value": 1.0,
+            "exact": 1.0
+          }
+        }
+      }
+    },
+    {
+      "name": "segmentation_metrics",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "Dice matches its hand-computed value, the percentile Hausdorff distance of a known separation is exact and centreline Dice exceeds Dice on a single trunk",
+      "evidence": {
+        "dice_shifted_trunk": 0.9375,
+        "hand_computed_dice": 0.9375,
+        "hd95_mm": 1.0,
+        "known_distance_mm": 5.0,
+        "cldice_shifted_trunk": 0.9772727272727273,
+        "trunk_dice": 0.358974358974359,
+        "trunk_cldice": 0.4827586206896552
+      }
+    },
+    {
+      "name": "confluence_weighting",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the confluence cylinder has a 10 mm radius and the cost is raised inside it with a unit floor outside",
+      "evidence": {
+        "radius_mm": 10.0,
+        "unique_weights": [
+          1.0,
+          3.0
+        ],
+        "voxels_above_one": 14962.0,
+        "voxels": 1032192
+      }
+    },
+    {
+      "name": "crossfit_disjointness",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the folds partition the development patients without overlap",
+      "evidence": {
+        "folds": [
+          11,
+          11,
+          11,
+          11,
+          10
+        ],
+        "development_patients": 54,
+        "distinct_patients_across_folds": 54
+      }
+    },
+    {
+      "name": "split_disjointness",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "training and tuning patients are disjoint and the external partition holds only the sealed site",
+      "evidence": {
+        "train": 73,
+        "tune": 18,
+        "external": 29,
+        "overlap": [],
+        "external_sites": [
+          "Site C"
+        ]
+      }
+    },
+    {
+      "name": "class_balanced_weights",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the class weights reproduce the effective-number closed form and every class keeps positive weight",
+      "evidence": {
+        "counts": [
+          900.0,
+          600.0,
+          300.0,
+          100.0
+        ],
+        "weights": [
+          0.36902204155921936,
+          0.485332727432251,
+          0.844822108745575,
+          2.300823211669922
+        ],
+        "closed_form": [
+          0.3690220556738609,
+          0.4853327305314372,
+          0.8448220969715937,
+          2.300823116823109
+        ]
+      }
+    },
+    {
+      "name": "severity_independent_of_appearance",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the reported severity is a function of the descriptor branch alone",
+      "evidence": {
+        "max_change_on_scaled_appearance": 0.0,
+        "max_change_on_random_appearance": 0.0
+      }
+    },
+    {
+      "name": "decision_rule_arithmetic",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the recommendation reproduces the indicator of the summed post-thrombotic and occlusive probability",
+      "evidence": {
+        "thresholds": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "rows": 200
+      }
+    },
+    {
+      "name": "temperature_scaling",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the fitted temperature exceeds one, reduces the negative log-likelihood of an over-confident model and is no worse than any temperature on a coarse grid",
+      "evidence": {
+        "temperature": 2.8887980290682176,
+        "nll_before": 1.6306753140127168,
+        "nll_after": 0.8855400276849295,
+        "best_grid_nll": 0.9208054157786941,
+        "corrupted_fraction": 0.26875
+      }
+    },
+    {
+      "name": "descriptor_family_split",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the dimensionless family is invariant under an isotropic rescaling while the absolute family is not",
+      "evidence": {
+        "dimensionless_columns": [
+          2,
+          5,
+          9,
+          12,
+          16,
+          19
+        ],
+        "absolute_columns": [
+          0,
+          6,
+          7,
+          13,
+          14,
+          20
+        ],
+        "covered_columns": 12,
+        "shape_factor_change": 4.49727174918712e-12,
+        "area_change": 3.0,
+        "series_resistance_change": 0.9374999999997189
+      }
+    },
+    {
+      "name": "propagated_error",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "a 4.1 percent area error gives 8.2 percent in rho_R from the inverse-square law, and the exact finite perturbation sits below it by its second-order term",
+      "evidence": {
+        "closed_form": 0.082,
+        "exact_finite_perturbation": 0.07721921857077851,
+        "linearisation_residual": 0.0047807814292214895,
+        "second_order_bound": 0.005043000000000001,
+        "small_perturbation_exact": 1.9999969997908096e-06
+      }
+    },
+    {
+      "name": "icc_arithmetic",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the intraclass correlation equals the mean-square formula and the agreement limits equal the bias plus 1.96 standard deviations",
+      "evidence": {
+        "icc": 0.9315068493150684,
+        "hand_computed": 0.9315068493150684,
+        "bias": -0.08333333333333333,
+        "sd": 0.8612007121842542,
+        "loa_high": 1.6045890460080499
+      }
+    },
+    {
+      "name": "delong_matches_direct",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the rank-based DeLong covariance agrees with the direct pairwise computation to machine precision",
+      "evidence": {
+        "rows": [
+          {
+            "seed": 1.0,
+            "cases": 120.0,
+            "auc_first": 0.5378197997775306,
+            "auc_second": 0.5520022246941045,
+            "standard_error": 0.05727105692549624,
+            "p_value": 0.8044153858099302,
+            "max_absolute_difference": 6.938893903907228e-18
+          },
+          {
+            "seed": 2.0,
+            "cases": 240.0,
+            "auc_first": 0.4854266403829908,
+            "auc_second": 0.5029569135454801,
+            "standard_error": 0.039112646487602466,
+            "p_value": 0.6540091393585818,
+            "max_absolute_difference": 1.9984014443252818e-15
+          },
+          {
+            "seed": 3.0,
+            "cases": 400.0,
+            "auc_first": 0.5758363933088536,
+            "auc_second": 0.5336087311301511,
+            "standard_error": 0.03039900110412501,
+            "p_value": 0.16479824567022253,
+            "max_absolute_difference": 1.1102230246251565e-16
+          }
+        ],
+        "max_absolute_difference": 1.9984014443252818e-15
+      }
+    },
+    {
+      "name": "calibration_behaviour",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the calibration slope is near one on calibrated probabilities and well below one on over-confident ones",
+      "evidence": {
+        "honest_slope": 1.0105655729071135,
+        "over_confident_slope": 0.2106348955716929,
+        "samples": 6000
+      }
+    },
+    {
+      "name": "chi2_reference_values",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the chi-square survival function returns 0.05 at the one, two and three degree-of-freedom critical values",
+      "evidence": {
+        "df1": 0.05000000000000004,
+        "df2": 0.05000000000000008,
+        "df3": 0.05000000000000006
+      }
+    },
+    {
+      "name": "parameter_resolution",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "each reported parameter total is bracketed by its family and the resolver returns the nearer neighbour",
+      "evidence": {
+        "rows": [
+          {
+            "encoder": "resnet50_unet",
+            "reported": 46.3,
+            "measured_at_default": 51.292448,
+            "multiplier": 0.9531250000004999,
+            "achieved_millions": 46.081276,
+            "target_millions": 46.3,
+            "lower_millions": 46.081276,
+            "upper_millions": 47.077332,
+            "relative_gap": 0.00472406047516187,
+            "ladder_granularity": 0.021513088552915678,
+            "is_nearer_neighbour": true
+          },
+          {
+            "encoder": "densenet121_unet",
+            "reported": 28.7,
+            "measured_at_default": 11.273792,
+            "multiplier": 1.5624999999995002,
+            "achieved_millions": 29.743272,
+            "target_millions": 28.7,
+            "lower_millions": 25.3464,
+            "upper_millions": 29.743272,
+            "relative_gap": 0.036350940766550585,
+            "ladder_granularity": 0.15320111498257846,
+            "is_nearer_neighbour": true
+          },
+          {
+            "encoder": "attention3d_unet",
+            "reported": 38.1,
+            "measured_at_default": 25.313844,
+            "multiplier": 1.2265624999995002,
+            "achieved_millions": 38.345328,
+            "target_millions": 38.1,
+            "lower_millions": 37.732775,
+            "upper_millions": 38.345328,
+            "relative_gap": 0.006439055118110253,
+            "ladder_granularity": 0.016077506561679934,
+            "is_nearer_neighbour": true
+          },
+          {
+            "encoder": "foundation_trunk",
+            "reported": 131.0,
+            "measured_at_default": 9.250592,
+            "multiplier": 3.8476562500005,
+            "achieved_millions": 131.0191,
+            "target_millions": 131.0,
+            "lower_millions": 130.703682,
+            "upper_millions": 131.0191,
+            "relative_gap": 0.00014580152671762425,
+            "ladder_granularity": 0.002407770992366583,
+            "is_nearer_neighbour": true
+          },
+          {
+            "encoder": "universal_transferred",
+            "reported": 96.4,
+            "measured_at_default": 21.393408,
+            "multiplier": 2.1328124999995,
+            "achieved_millions": 96.22272,
+            "target_millions": 96.4,
+            "lower_millions": 96.22272,
+            "upper_millions": 97.640448,
+            "relative_gap": 0.0018390041493777003,
+            "ladder_granularity": 0.014706721991701357,
+            "is_nearer_neighbour": true
+          },
+          {
+            "encoder": "universal_prompted",
+            "reported": 142.0,
+            "measured_at_default": 21.39648,
+            "multiplier": 2.5859374999995,
+            "achieved_millions": 141.55416,
+            "target_millions": 142.0,
+            "lower_millions": 141.55416,
+            "upper_millions": 143.272608,
+            "relative_gap": 0.003139718309859183,
+            "ladder_granularity": 0.012101746478873205,
+            "is_nearer_neighbour": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "proposed_total",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the declared widths reproduce the reported total of the proposed network within the width granularity",
+      "evidence": {
+        "encoder": "foundation_trunk",
+        "declared_width_mult": 3.8477,
+        "declared_decoder_width_mult": 0.07813,
+        "reported_total_millions": 133.6,
+        "measured_millions": 133.616638,
+        "resolution": {
+          "multiplier": 0.0781250000005,
+          "achieved_millions": 133.616638,
+          "target_millions": 133.6,
+          "lower_millions": 132.830318,
+          "upper_millions": 133.616638,
+          "relative_gap": 0.0001245359281437154,
+          "ladder_granularity": 0.00588562874251489
+        },
+        "bracketed": true,
+        "is_nearer_neighbour": true,
+        "declared_lands_on_ladder": true
+      }
+    },
+    {
+      "name": "dataset_provenance",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "both pretraining corpora are recorded with a pinned version, a licence and a listed source",
+      "evidence": {
+        "probed_live": false,
+        "probe_design": {
+          "attempts_per_address": 3,
+          "addresses_tried_in_order": "the printed DOI, then the archive record, then the concept DOI"
+        },
+        "corpora": [
+          {
+            "name": "TotalSegmentator CT dataset",
+            "version": "2.0.1",
+            "licence": "CC BY 4.0",
+            "recorded_url": "https://doi.org/10.5281/zenodo.10047292",
+            "alternates": [
+              "https://zenodo.org/records/10047292",
+              "https://doi.org/10.5281/zenodo.6802613"
+            ],
+            "listed_in_link_list": true
+          },
+          {
+            "name": "AbdomenAtlas 1.0",
+            "version": "1.0",
+            "licence": "see the licence stated at the repository",
+            "recorded_url": "https://github.com/MrGiovanni/AbdomenAtlas",
+            "alternates": [],
+            "listed_in_link_list": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "geometric_only",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "no pressure term is computed anywhere in the hydraulics package; the descriptors are geometric resistances",
+      "evidence": {
+        "files_scanned": 8,
+        "hits": []
+      }
+    },
+    {
+      "name": "reader_records",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "two reader calls are recorded per limb, the consensus is conditional on agreement and the type II and III boundary carries disagreements",
+      "evidence": {
+        "limbs": 669,
+        "agreement_rate": 0.8804185351270553,
+        "boundary_disagreements": 43
+      }
+    },
+    {
+      "name": "model_branch_wiring",
+      "family": "paper",
+      "status": "PASS",
+      "detail": "the fused model consumes the descriptor vector and the appearance patch and returns one logit per type",
+      "evidence": {
+        "logits_shape": [
+          2,
+          4
+        ],
+        "tube_span_mm": 20.0,
+        "tube_radius_mm": 10.0
+      }
+    },
+    {
+      "name": "private_cohort_absent",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the tree carries no imaging record, credential, spreadsheet or key material",
+      "evidence": {
+        "files_scanned": 144,
+        "forbidden_hits": [],
+        "hit_count": 0
+      }
+    },
+    {
+      "name": "data_generation",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the generated cohort reproduces the configured type prevalence and nests two limbs under one patient",
+      "evidence": {
+        "patients": 400,
+        "limbs": 672,
+        "type_counts": [
+          288,
+          207,
+          123,
+          54
+        ],
+        "observed_prevalence": [
+          0.42857142857142855,
+          0.3080357142857143,
+          0.18303571428571427,
+          0.08035714285714286
+        ],
+        "max_absolute_deviation": 0.021428571428571463,
+        "two_limb_share": 0.68
+      }
+    },
+    {
+      "name": "mask_rendering",
+      "family": "code",
+      "status": "PASS",
+      "detail": "each type renders a non-empty mask and the occlusive span removes lumen over its lesion slices",
+      "evidence": {
+        "rows": [
+          {
+            "type": 1,
+            "voxels": 26288,
+            "slices_with_lumen": 112,
+            "lesion_slice_span": 25
+          },
+          {
+            "type": 2,
+            "voxels": 27184,
+            "slices_with_lumen": 112,
+            "lesion_slice_span": 25
+          },
+          {
+            "type": 3,
+            "voxels": 34920,
+            "slices_with_lumen": 112,
+            "lesion_slice_span": 25
+          },
+          {
+            "type": 4,
+            "voxels": 24268,
+            "slices_with_lumen": 87,
+            "lesion_slice_span": 25
+          }
+        ]
+      }
+    },
+    {
+      "name": "solver_matches_closed_form",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the solved per-section descriptors follow the closed-form reference of the generating shape family within the voxelisation band, and in rank along every limb",
+      "evidence": {
+        "sections_compared": 224,
+        "voxelisation_band": 0.10293006449060703,
+        "median_relative_area_error": 0.10124828481769281,
+        "median_relative_conductance_error": 0.12041834462506427,
+        "median_relative_shape_factor_error": 0.09095151309327165,
+        "p95_relative_area_error": 0.2867068017240077,
+        "p95_relative_conductance_error": 0.619788226703513,
+        "worst_relative_area_error": 0.4370746438823767,
+        "worst_relative_conductance_error": 1.0863044749872401,
+        "worst_relative_shape_factor_error": 0.5990108949485613,
+        "worst_rank_agreement": 0.9563581193364846
+      }
+    },
+    {
+      "name": "segmenter_forward_and_backward",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the segmenter returns per-voxel logits at the input resolution, gradients flow and one step changes the parameters",
+      "evidence": {
+        "logits_shape": [
+          2,
+          2,
+          16,
+          32,
+          32
+        ],
+        "loss": 1.6633384227752686,
+        "gradient_norm": 8.237476478178667,
+        "parameters_with_gradient": 86,
+        "parameters_changed": true
+      }
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the checkpoint restores the identical parameter payload, the seed-bearing random state and a world-readable file mode",
+      "evidence": {
+        "digest_before": "87bf1b6ff2956dd1f2436bbcad3268dbc1ba1698c9b6186b830a970f819dc45f",
+        "digest_after": "87bf1b6ff2956dd1f2436bbcad3268dbc1ba1698c9b6186b830a970f819dc45f",
+        "expected_draw": 0.1520656943321228,
+        "restored_draw": 0.1520656943321228,
+        "file_mode": "0o644",
+        "checkpoint_bytes": 5091806
+      }
+    },
+    {
+      "name": "single_batch_overfit",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the segmentation loop drives one batch from its initial loss to a high soft Dice on the same batch",
+      "evidence": {
+        "first_loss": 1.6608319282531738,
+        "last_loss": 0.11765511333942413,
+        "relative_drop": 0.9291589285237483,
+        "soft_dice_on_batch": 0.8630481347864086,
+        "steps": 160
+      }
+    },
+    {
+      "name": "training_smoke_two_steps",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the segmentation trainer completes its steps on the smoke configuration and writes a checkpoint",
+      "evidence": {
+        "steps": 4,
+        "first_loss": 1.7560542821884155,
+        "last_loss": 1.4586649537086487,
+        "relative_drop": 0.1693508745692968,
+        "checkpoint_written": true
+      }
+    },
+    {
+      "name": "type_training_and_calibration",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the two-branch model trains, its temperature is fitted on the tuning partition and its training macro-AUROC is finite",
+      "evidence": {
+        "steps": 6,
+        "first_loss": 1.6825489401817322,
+        "last_loss": 1.6825489401817322,
+        "train_macro_auroc": 0.8517443440624889,
+        "temperature": 1.9698109889672843,
+        "train_cases": 67,
+        "tune_cases": 16
+      }
+    },
+    {
+      "name": "pipeline_tables",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the pipeline produced all seven tables and wrote a text report and a JSON record",
+      "evidence": {
+        "table_numbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "table_statuses": {
+          "3": "PASS",
+          "2": "PASS",
+          "4": "PASS",
+          "6": "PASS",
+          "5": "PASS",
+          "7": "PASS",
+          "1": "PASS"
+        },
+        "artefacts": {
+          "report": "_smoke_report.txt",
+          "record": "_smoke_record.json"
+        },
+        "cohort_patients": 60,
+        "cohort_limbs": 95
+      }
+    },
+    {
+      "name": "cli_hydraulics",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the descriptor entry point solves a section and returns its hydraulic signature",
+      "evidence": {
+        "shape": "ellipse",
+        "area_mm2": 399.75,
+        "occupancy_area_mm2": 373.25,
+        "interface_edges": 212,
+        "conductance_mm4": 3382.762671082942,
+        "shape_factor": 1.8796005163677967,
+        "channels": 1,
+        "channel_areas_mm2": [
+          399.75
+        ],
+        "below_floor": 0,
+        "resolution_limited": true,
+        "iterations": 337,
+        "residual": 5.482547749124933e-11,
+        "converged": true,
+        "elliptic_closed_form_shape_factor": 1.8166666666666669
+      }
+    },
+    {
+      "name": "resolution_ladder",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the shape factor of a digital ellipse approaches the closed form as the mask resolution is refined",
+      "evidence": {
+        "rows": [
+          {
+            "step_mm": 1.0,
+            "area": 423.0,
+            "shape_factor": 1.9571769043056473,
+            "reference_shape_factor": 1.816666666666666,
+            "relative_error": 0.07734508493888881
+          },
+          {
+            "step_mm": 0.5,
+            "area": 399.75,
+            "shape_factor": 1.8796005163677967,
+            "reference_shape_factor": 1.816666666666666,
+            "relative_error": 0.03464248607401691
+          },
+          {
+            "step_mm": 0.25,
+            "area": 388.6875,
+            "shape_factor": 1.8472107716976651,
+            "reference_shape_factor": 1.816666666666666,
+            "relative_error": 0.0168132688244032
+          }
+        ],
+        "errors": [
+          0.07734508493888881,
+          0.03464248607401691,
+          0.0168132688244032
+        ],
+        "monotone": true
+      }
+    },
+    {
+      "name": "provenance_and_licence",
+      "family": "code",
+      "status": "PASS",
+      "detail": "the release carries its licence, its third-party notice, one link per declared corpus and exactly one markdown document",
+      "evidence": {
+        "missing": [],
+        "licences_named": 4,
+        "links": 2,
+        "listed_corpora": [
+          "TotalSegmentator CT dataset",
+          "AbdomenAtlas 1.0"
+        ],
+        "markdown": [
+          "README.md"
+        ]
+      }
+    },
+    {
+      "name": "artefact_hygiene",
+      "family": "code",
+      "status": "PASS",
+      "detail": "no shipped file carries a host path, a credential, an address, a construction-register word or a placeholder marker",
+      "evidence": {
+        "files_scanned": 131,
+        "hits": [],
+        "hit_count": 0
+      }
+    },
+    {
+      "name": "config_integrity",
+      "family": "code",
+      "status": "PASS",
+      "detail": "every experiment configuration resolves, the smoke configuration is a marked reduction and the reported profile is intact",
+      "evidence": {
+        "config_files": 46,
+        "experiments": 35,
+        "failures": [],
+        "main_epochs": 200,
+        "smoke_epochs": 2,
+        "smoke_marked": true
+      }
+    },
+    {
+      "name": "clinical_cohort_values",
+      "family": "code",
+      "status": "NOT_RUN",
+      "detail": "the clinical cohort is not shareable, so no cohort-level point value is reported by this run",
+      "evidence": {
+        "reason": "Sec. 6.2 and the Data availability statement state that the sensitive raw records are not shared.",
+        "what_is_executed_instead": "every mechanism runs on a schema-compatible cohort fixture with a closed-form ground truth"
+      }
+    },
+    {
+      "name": "pretraining_run",
+      "family": "code",
+      "status": "NOT_RUN",
+      "detail": "the pretraining corpora were not staged, so no pretraining run was performed",
+      "evidence": {
+        "expected_locations": {
+          "totalsegmentator": "data/public/totalsegmentator_v201",
+          "abdomenatlas": "data/public/abdomenatlas_1_0",
+          "pretraining_manifest": "data/public/pretraining_manifest.json"
+        },
+        "present": {
+          "totalsegmentator": false,
+          "abdomenatlas": false
+        },
+        "reason": "TotalSegmentator release 2.0.1 is 23.6 GB and the transfer rate to it is throttled from here."
+      }
+    },
+    {
+      "name": "gpu_scale_run",
+      "family": "code",
+      "status": "NOT_RUN",
+      "detail": "no accelerator is present, so the headline training run was executed at reduced scale only",
+      "evidence": {
+        "cuda_available": false,
+        "device_count": 0,
+        "reported_gpu_hours": 214,
+        "reported_gpu": "A100"
+      }
+    },
+    {
+      "name": "container_build",
+      "family": "code",
+      "status": "NOT_RUN",
+      "detail": "no container runtime is installed, so the image build was not attempted",
+      "evidence": {
+        "runtime": null,
+        "dockerfile_present": true
+      }
+    },
+    {
+      "name": "reader_arm_human",
+      "family": "code",
+      "status": "NOT_RUN",
+      "detail": "the reader arm is reported NOT_RUN; the cohort fixture carries reader disagreement instead",
+      "evidence": {
+        "readers_required": 4,
+        "reader_sample": 596,
+        "reason": "Sec. 6.9 describes a sequential multi-reader design that cannot be executed from code."
+      }
+    }
+  ],
+  "first_pass": {
+    "what": "the manuscript claim to code mapping",
+    "artifact": "claim_to_code.json",
+    "claims": 32,
+    "verified": 32
+  },
+  "second_pass": {
+    "what": "the execution pass over data reading, forward, loss, backward, parameter update and checkpoint save and load",
+    "checks": [
+      "private_cohort_absent",
+      "data_generation",
+      "mask_rendering",
+      "solver_matches_closed_form",
+      "segmenter_forward_and_backward",
+      "checkpoint_roundtrip",
+      "single_batch_overfit",
+      "training_smoke_two_steps",
+      "type_training_and_calibration",
+      "pipeline_tables",
+      "cli_hydraulics",
+      "resolution_ladder",
+      "provenance_and_licence",
+      "artefact_hygiene",
+      "config_integrity",
+      "clinical_cohort_values",
+      "pretraining_run",
+      "gpu_scale_run",
+      "container_build",
+      "reader_arm_human"
+    ],
+    "executed": 15
+  },
+  "limitations": [
+    "Cohort-level point values are NOT_RUN because the clinical cohort is not shareable.",
+    "The headline training run is NOT_RUN at scale because no accelerator is present.",
+    "Pretraining is NOT_RUN because the public corpora were not staged.",
+    "The container build is NOT_RUN because no container runtime is installed.",
+    "The dataset sources are read from the shipped link list; pass --probe-live to re-verify them."
+  ]
+}

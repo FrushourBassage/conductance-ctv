@@ -1,0 +1,13 @@
+# Grid and cohort shape of the cohort fixture.
+# The clinical cohort is not shareable; this cohort has the same schema and a
+# ground truth that is prescribed in closed form.
+source: fixture
+shape: [112, 96, 96]
+spacing_zyx: [1.0, 0.6, 0.6]
+n_patients: 240
+two_limb_fraction: 0.68
+site_mix: [0.42, 0.36, 0.22]
+type_prevalence: [0.45, 0.30, 0.18, 0.07]
+tune_fraction: 0.20
+crossfit_folds: 5
+prepared_dir: data/derived

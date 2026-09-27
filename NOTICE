@@ -1,0 +1,58 @@
+NOTICE
+======
+
+This release bundles no third-party dataset, weight file, image record or
+credential. The material below is either fetched by the user or referenced as a
+dependency, and each entry keeps its own licence and source.
+
+Public datasets
+---------------
+
+TotalSegmentator computed tomography dataset, release 2.0.1
+  Licence : CC BY 4.0
+  Source  : https://doi.org/10.5281/zenodo.10047292
+  Record  : "Dataset with segmentations of 117 important anatomical structures in
+            1228 CT images", version 2.0.1, Zenodo record 10047292.
+  Role    : abdominal vascular labels for pretraining the segmentation backbone.
+  Note    : the concept DOI printed in the manuscript,
+            https://doi.org/10.5281/zenodo.6802613, resolves to the newest release
+            of the same record family; the pinned version is the one above.
+  Citation: Wasserthal, J. et al. TotalSegmentator: robust segmentation of 104
+            anatomic structures in CT images. Radiol. Artif. Intell. 5, e230024
+            (2023). DOI 10.1148/ryai.230024
+
+AbdomenAtlas 1.0
+  Licence : the licence stated at the repository
+  Source  : https://github.com/MrGiovanni/AbdomenAtlas
+  Role    : abdominal computed tomography volumes and organ labels for pretraining.
+  Note    : distributed through the project's own download channels; not
+            redistributed here.
+  Citation: Li, W. et al. AbdomenAtlas: a large-scale, detailed-annotated,
+            multi-center dataset for efficient transfer learning and open
+            algorithmic benchmarking. Med. Image Anal. 97, 103285 (2024).
+
+TotalSegmentator reference implementation
+  Licence : Apache License 2.0
+  Source  : https://github.com/wasserth/TotalSegmentator
+  Role    : the reference label set the pretraining manifest names.
+
+Software dependencies
+---------------------
+
+NumPy            BSD 3-Clause        https://numpy.org
+PyYAML           MIT                 https://pyyaml.org
+scikit-learn     BSD 3-Clause        https://scikit-learn.org
+PyTorch          BSD 3-Clause        https://pytorch.org
+
+The evaluation in this release uses a release-local implementation of the
+DeLong covariance, the intraclass correlation, the chi-square survival function
+and the clustered bootstrap; no third-party statistics library is required for
+those.
+
+Clinical cohort
+---------------
+
+The study cohort of the manuscript is not bundled and no derived record of it is
+present in this repository. The release ships a generator that produces a
+cohort fixture with the same schema, whose cross-sections are prescribed in
+closed form. The generator carries no patient data of any kind.

@@ -1,0 +1,14 @@
+# Comparator: prompted universal foundation with a head
+# Ref: Table 3 row 11
+defaults:
+  model: universal_prompted
+  data: fixture_full
+  train: main
+name: comparator_universal_prompted
+hydraulics:
+  reference_mode: max
+  upsample_factor: 2
+evaluation:
+  bootstrap_resamples: 2000
+  threshold: 0.5
+  seeds: [20260101, 20260102, 20260103, 20260104, 20260105]

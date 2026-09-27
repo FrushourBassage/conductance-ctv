@@ -1,0 +1,14 @@
+# Primary result: four-type assignment with the hydraulic descriptor branch
+# Ref: Tables 1, 3, 4, 5, 6, 7; the primary endpoint of Sec. 6.7
+defaults:
+  model: foundation_trunk
+  data: fixture_full
+  train: main
+name: main
+hydraulics:
+  reference_mode: max
+  upsample_factor: 2
+evaluation:
+  bootstrap_resamples: 2000
+  threshold: 0.5
+  seeds: [20260101, 20260102, 20260103, 20260104, 20260105]

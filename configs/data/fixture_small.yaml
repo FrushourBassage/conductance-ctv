@@ -1,0 +1,11 @@
+# Reduced grid used by the fast evaluation entry point.
+source: fixture
+shape: [48, 40, 40]
+spacing_zyx: [1.5, 1.2, 1.2]
+n_patients: 60
+two_limb_fraction: 0.60
+site_mix: [0.42, 0.36, 0.22]
+type_prevalence: [0.45, 0.30, 0.18, 0.07]
+tune_fraction: 0.20
+crossfit_folds: 3
+prepared_dir: data/derived

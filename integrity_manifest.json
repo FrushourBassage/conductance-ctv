@@ -1,0 +1,726 @@
+{
+  "root": ".",
+  "file_count": 143,
+  "total_bytes": 929519,
+  "excluded": [
+    "integrity_manifest.json"
+  ],
+  "manifest_digest": "46a6f94e1657b489013f7a08f1392f158e03443ca86fd69f66f3ae354d9ae80b",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 275,
+      "sha256": "a31cc3405fb75a05c36e5394c2824cd3ed59f667d7956d03f99ba8362357c69f"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "bytes": 753,
+      "sha256": "c97f01bac16db4e0a336aa90c166d8119dc70e7750a2d156d0f097b9e761551f"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 971,
+      "sha256": "002f86c5d4c35f2777822e1c3ce00c1d8ddd68694437340a1a975cfa9f55ed76"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1388,
+      "sha256": "b68bf072d9763e0fca4bdc83b340b2d8c7120ea00f854b357c5dd0fe2bf35f26"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 2625,
+      "sha256": "473d3a40efdc481e62d617d924a9f8f70568eb4d0732d7d7d2f2f668cf44cf46"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11025,
+      "sha256": "0446fa6e4d5ed8b419a785ca18f9355cb66591c3bb2171db8eb75c9e522a8e6c"
+    },
+    {
+      "path": "claim_to_code.json",
+      "bytes": 47427,
+      "sha256": "c44adf2b368b9c9f1f487f81b6e5849f6c152bd24aafa18f3f17b40905d46ca7"
+    },
+    {
+      "path": "configs/data/fixture_full.yaml",
+      "bytes": 417,
+      "sha256": "ff94d7701c69f4886c9cd641271d4c88f7ba0cd939d527f74cd4941ed4a9c06b"
+    },
+    {
+      "path": "configs/data/fixture_small.yaml",
+      "bytes": 296,
+      "sha256": "2327650dd14d7dd57905a1f1640f4fdce4ec34cff158f5d2e542da503bcd83b1"
+    },
+    {
+      "path": "configs/experiment/_smoke.yaml",
+      "bytes": 755,
+      "sha256": "1218e25be9a27c1ce97bf41bd09e29e25553fe94a548c31f8fd11ae405fe1656"
+    },
+    {
+      "path": "configs/experiment/ablation_collateral_fixed_cutpoint.yaml",
+      "bytes": 393,
+      "sha256": "e68304fe148ebec146e2194fa1afb7bd8db02063296d17e728896508f757b1f2"
+    },
+    {
+      "path": "configs/experiment/ablation_init_100pct_scratch.yaml",
+      "bytes": 404,
+      "sha256": "300294fdf4c8b71e1f26f7104ccb3f63c8bf1ce34bd8071dac32326f46ec7194"
+    },
+    {
+      "path": "configs/experiment/ablation_init_10pct_pretrained.yaml",
+      "bytes": 428,
+      "sha256": "83daaff2c4dc9a553d9128c7192e92154192bca740d7809bcf5da117e063133f"
+    },
+    {
+      "path": "configs/experiment/ablation_init_10pct_scratch.yaml",
+      "bytes": 411,
+      "sha256": "317b55ec4b94a2f43678f49948611be12e8c2adc6a876e8070cb71c0867e3721"
+    },
+    {
+      "path": "configs/experiment/ablation_init_25pct_pretrained.yaml",
+      "bytes": 428,
+      "sha256": "8f5cff571e556472e65cd40ed3b0739fd904bf15427db95fce82a2d116d9a93c"
+    },
+    {
+      "path": "configs/experiment/ablation_no_adaptation.yaml",
+      "bytes": 421,
+      "sha256": "e60e068fb2036e4a5a5a2313f7710a3c093ecc798250a67bdf122ce032f2552e"
+    },
+    {
+      "path": "configs/experiment/ablation_no_appearance.yaml",
+      "bytes": 380,
+      "sha256": "52285040ceb59b06ab6a60957d4c8ca4bb6fffa828f23d3aa0111ae0f0abb398"
+    },
+    {
+      "path": "configs/experiment/ablation_no_channel_count.yaml",
+      "bytes": 516,
+      "sha256": "ff75ae0b7b01ccabf5560ce84396fb79fd6d21fcfbfd25982eb99d446fdc9445"
+    },
+    {
+      "path": "configs/experiment/ablation_no_collateral.yaml",
+      "bytes": 364,
+      "sha256": "5f8a1dc181f26abf23d7972d61f47e1559064ba0a688f50fab1b4b345ede6620"
+    },
+    {
+      "path": "configs/experiment/ablation_no_confluence_loss.yaml",
+      "bytes": 396,
+      "sha256": "371f2c2fff9ef1a9c383dba9c50944eaa84e656391945793e752583ea6e740b0"
+    },
+    {
+      "path": "configs/experiment/ablation_no_hydraulic_operator.yaml",
+      "bytes": 394,
+      "sha256": "b43cd2094005571b554546c2a73112b1594bdb43ae8d30f637817a1c66e6ba65"
+    },
+    {
+      "path": "configs/experiment/ablation_no_normalisation.yaml",
+      "bytes": 404,
+      "sha256": "b0c111633ee5a34d83becd9628328b7a2939fb431ccb7608eccdaf2d26cd150a"
+    },
+    {
+      "path": "configs/experiment/ablation_no_star_pooling.yaml",
+      "bytes": 374,
+      "sha256": "40014436e29be13f3ef07720f8399f3566e4a52b02ffcf2277e099349df2956d"
+    },
+    {
+      "path": "configs/experiment/comparator_endtoend_attention.yaml",
+      "bytes": 343,
+      "sha256": "d77df1410f4e1090743cc8a98144b12f57152e82ca0489c92c1edda2e68f7c5c"
+    },
+    {
+      "path": "configs/experiment/comparator_endtoend_densenet121.yaml",
+      "bytes": 353,
+      "sha256": "bca5f5da427173b566195e3494295a9f147e92582a5846d6e45eaa7c15202109"
+    },
+    {
+      "path": "configs/experiment/comparator_endtoend_resnet50.yaml",
+      "bytes": 338,
+      "sha256": "2963e667ca7e0978add3d9581da73f6fcbdc9e1434a6efc130afbb9b28fe489c"
+    },
+    {
+      "path": "configs/experiment/comparator_frozen_linear.yaml",
+      "bytes": 364,
+      "sha256": "f0fe3ddd0ab1667f7579f81d6f6a8256d8d48083a984be047c7d9f0a953b929c"
+    },
+    {
+      "path": "configs/experiment/comparator_radiomics_gbm.yaml",
+      "bytes": 377,
+      "sha256": "9d9e075d92ac59bffffc349421fdd801ebf034559e2ea330536d52bc2396f45c"
+    },
+    {
+      "path": "configs/experiment/comparator_radiomics_lr.yaml",
+      "bytes": 374,
+      "sha256": "ef76a72d0f8053c78e6bf626fdc45d0d110dd5515d87d9640497845f95691900"
+    },
+    {
+      "path": "configs/experiment/comparator_radiomics_svm.yaml",
+      "bytes": 377,
+      "sha256": "f9dccd7a1a3f381e9b56de5522293c8bd5298846e5cb6ede72486f2444730aed"
+    },
+    {
+      "path": "configs/experiment/comparator_single_diameter.yaml",
+      "bytes": 366,
+      "sha256": "7be141fbee2f9109ecfa58208b6d8130f016bd4011b77534e837e81be90ac3f4"
+    },
+    {
+      "path": "configs/experiment/comparator_universal_prompted.yaml",
+      "bytes": 359,
+      "sha256": "007d42bdd3c237fb31dadb321488e291936a41609e56311ae9b1ef146783b96e"
+    },
+    {
+      "path": "configs/experiment/comparator_universal_transferred.yaml",
+      "bytes": 363,
+      "sha256": "c379a1efb479ba9c01bcfdcf44b1c75fd7e2d2286e6067b9e012d8c673680436"
+    },
+    {
+      "path": "configs/experiment/fairness_debiased.yaml",
+      "bytes": 450,
+      "sha256": "7efba56f577f04c021e8adae33a60062ca0f4302a36057c9963cc8c0ff89415d"
+    },
+    {
+      "path": "configs/experiment/main.yaml",
+      "bytes": 395,
+      "sha256": "c642921c702093f486e08c9b202e584b0572ad2ec2c303cffe580286409f018c"
+    },
+    {
+      "path": "configs/experiment/supplementary_initialisation_ensemble.yaml",
+      "bytes": 435,
+      "sha256": "b9d6d0ace8154bcd431e9ab069d1a1d4fd6ea4caae630b2bf110129145fabd36"
+    },
+    {
+      "path": "configs/experiment/supplementary_leave_one_site_out.yaml",
+      "bytes": 415,
+      "sha256": "8ac76052ba450ff7275e408c0d8448794c13cbeac30b6860ec6111d6dfd89ac8"
+    },
+    {
+      "path": "configs/experiment/supplementary_phase_subgroups.yaml",
+      "bytes": 410,
+      "sha256": "db301c9b919ae909c709d34253b14873eeeeb6e8b43f6aeae4c3906ade6837f7"
+    },
+    {
+      "path": "configs/experiment/supplementary_reader_arm.yaml",
+      "bytes": 392,
+      "sha256": "6246a0cafd79ff943fe1d80696177a203aaade26e506b9e26ac1e44adcaf7975"
+    },
+    {
+      "path": "configs/experiment/supplementary_resolution_study.yaml",
+      "bytes": 435,
+      "sha256": "92a97d2ae0f22c63fc84d05e1bca17223ec5e06dd73ac4cff8bc3e2c0b69dc56"
+    },
+    {
+      "path": "configs/experiment/supplementary_temporal_halves.yaml",
+      "bytes": 399,
+      "sha256": "60742d6473bb3d0dd2ddd7f82fa8640d430c07b8eb7715c6c46bf0ae8ae0900c"
+    },
+    {
+      "path": "configs/experiment/supplementary_threshold_band.yaml",
+      "bytes": 415,
+      "sha256": "fcae3473a2f8b8fde2e639138fcbe3702a8bdb105300fa1bf13ff7af2a1dde1f"
+    },
+    {
+      "path": "configs/experiment/supplementary_transport.yaml",
+      "bytes": 417,
+      "sha256": "dfb50727015995d81624837d5430a1a43534bbd417a63622588341e9b1fded53"
+    },
+    {
+      "path": "configs/experiment/supplementary_vendor_subgroups.yaml",
+      "bytes": 380,
+      "sha256": "b08c8af75c32fd3d554aeb8d3ae71cdec53c330dd8f1ebaa018e08a9e34ab42c"
+    },
+    {
+      "path": "configs/model/attention3d_unet.yaml",
+      "bytes": 583,
+      "sha256": "622bada7b2570caa578961b43a2e6546d16d45e7427e573351eadfd2d5cb412d"
+    },
+    {
+      "path": "configs/model/densenet121_unet.yaml",
+      "bytes": 582,
+      "sha256": "844b2082210ed9524bf24c1316ccd997576345f1b00a2cdf7d583cdc40715919"
+    },
+    {
+      "path": "configs/model/foundation_trunk.yaml",
+      "bytes": 693,
+      "sha256": "abb70807fbfe557d71695b7fe56ca525892e108a1ef1f42ea4d35d362610500e"
+    },
+    {
+      "path": "configs/model/resnet50_unet.yaml",
+      "bytes": 577,
+      "sha256": "21336bd39fe562a6f061b53be1545723909f63bf5e86819f9d96229b74ddd7ff"
+    },
+    {
+      "path": "configs/model/universal_prompted.yaml",
+      "bytes": 580,
+      "sha256": "651199f0dc79ca0bbe7adc31d9db2dc976490da1bf7b2d32569c44ffac5cddf9"
+    },
+    {
+      "path": "configs/model/universal_transferred.yaml",
+      "bytes": 582,
+      "sha256": "5e77c1001291ef8ccb819634ad46501a24d26f72d44426fd5dec2575edb9b44c"
+    },
+    {
+      "path": "configs/train/fairness_constrained.yaml",
+      "bytes": 820,
+      "sha256": "a270ef5e44c87475e74ae080eb21630b92779661a8d47e6c6629f43cda4e8923"
+    },
+    {
+      "path": "configs/train/frozen_encoder.yaml",
+      "bytes": 815,
+      "sha256": "7d73032bfef96526afa2c7757adbc3a4ac3f9b5f3dad5ad1b1eb50a6a28b252c"
+    },
+    {
+      "path": "configs/train/main.yaml",
+      "bytes": 820,
+      "sha256": "23fdc8534c55d39d445c6bb2095afbfa8c96210111c31b6e2ebff0ea8c3b8b17"
+    },
+    {
+      "path": "dataset_urls.txt",
+      "bytes": 672,
+      "sha256": "330fc487d8d79928e8510aff6abf98465cb16aab04f2b79770315a015e64fdde"
+    },
+    {
+      "path": "environment.yml",
+      "bytes": 191,
+      "sha256": "1c9461e53278f925819816026d984a36f25368ba5956eba40d29b1632f77ada8"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 2309,
+      "sha256": "ce193fe0f8c39014d62b6e5183d4d97c31b68c8413860173458e8a3c4c1e64b0"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 135,
+      "sha256": "6ca99b15695dc860869e70bd374b16673f7df279b03bf09aedc6628b2334006f"
+    },
+    {
+      "path": "scripts/launch_eval.sh",
+      "bytes": 746,
+      "sha256": "006c32d4e277ad373cf6597bad4fc5a4899472c033db67fb127e9ed066040940"
+    },
+    {
+      "path": "scripts/launch_train.sh",
+      "bytes": 982,
+      "sha256": "43f97ecb8a6dfbfde1be67203a701783cb4b2c452c5f63fcbdb4252a98e279a1"
+    },
+    {
+      "path": "scripts/prepare_data.sh",
+      "bytes": 2942,
+      "sha256": "2c19112ab1dac5a526e5eba904ba8d7adddfbcb18fbdd2528911dbb3f0d744df"
+    },
+    {
+      "path": "scripts/verify_release.sh",
+      "bytes": 699,
+      "sha256": "bf6ab90220e187821c389db4ebb951dd67d422bfa991e407d79c8b42350a4cf3"
+    },
+    {
+      "path": "src/conductance_ctv/__init__.py",
+      "bytes": 216,
+      "sha256": "f1f9151c1c553582271f05edbde57501db5e99784c20087998b8a980088365b7"
+    },
+    {
+      "path": "src/conductance_ctv/cli/__init__.py",
+      "bytes": 491,
+      "sha256": "5a7141aa37b261efcd46086ed8a5edcf23667ad879bdc3f82b4a2e8bdf0bf646"
+    },
+    {
+      "path": "src/conductance_ctv/cli/architectures.py",
+      "bytes": 4263,
+      "sha256": "e858f241158f9d283c4cce791642384983c3b558899a7e63fe551359614379f7"
+    },
+    {
+      "path": "src/conductance_ctv/cli/evaluate.py",
+      "bytes": 2067,
+      "sha256": "a03a068c2beb159b1765f50e4ff981356d68e725a1b33740a85571784d041d9e"
+    },
+    {
+      "path": "src/conductance_ctv/cli/hydraulics.py",
+      "bytes": 6592,
+      "sha256": "e7b6d7ab096b6a730987facf714dc24d7e00e83ad0ad1b28aca4e16139cb44af"
+    },
+    {
+      "path": "src/conductance_ctv/cli/train.py",
+      "bytes": 5122,
+      "sha256": "f9dc75d2fbd6a0fe12fb365af62950c80596fe3b4be9dda8af2b38949c03217d"
+    },
+    {
+      "path": "src/conductance_ctv/cli/verify.py",
+      "bytes": 7932,
+      "sha256": "d70cacf9b892e7ce402eb0fdf4e1b0e9e4f3202352ce57a27b76984e2e4d496b"
+    },
+    {
+      "path": "src/conductance_ctv/data/__init__.py",
+      "bytes": 3648,
+      "sha256": "257314296c1858d9bae0573a98a5c9443d2f096ce10e72d4f7ea892a1e4287c9"
+    },
+    {
+      "path": "src/conductance_ctv/data/dataset.py",
+      "bytes": 14240,
+      "sha256": "25152c6e2bad94d460fd41413cc1823fb405ec25cc7512e82b192504230403aa"
+    },
+    {
+      "path": "src/conductance_ctv/data/fixture.py",
+      "bytes": 25205,
+      "sha256": "2f0d16de01b6966bcff77ec073139a5e32e7b5391abeeff718fa2669a3707e28"
+    },
+    {
+      "path": "src/conductance_ctv/data/manifest.py",
+      "bytes": 4912,
+      "sha256": "3e1a7b9f4bbe2b22a8494945071202bdfecd704cb7af2046b4456291f8b0f3ad"
+    },
+    {
+      "path": "src/conductance_ctv/data/sampling.py",
+      "bytes": 5969,
+      "sha256": "8526a00de1461748fdfba58dc9f76e5120f0997e5625d42a21ab67ad1817d4a2"
+    },
+    {
+      "path": "src/conductance_ctv/data/schema.py",
+      "bytes": 9003,
+      "sha256": "66c47a0e182303762796aa99e3a479130fac70eb33fdde598411ab4b622ccde0"
+    },
+    {
+      "path": "src/conductance_ctv/data/splits.py",
+      "bytes": 7287,
+      "sha256": "ecae0a3a36c1f38107fab1307ab320f0f4948890b40827b539aad36b299c33f1"
+    },
+    {
+      "path": "src/conductance_ctv/data/transforms.py",
+      "bytes": 6736,
+      "sha256": "2aa1f3418a5d238a60ef6798f27a70c11d012174c21ac38850f8b30beef0e617"
+    },
+    {
+      "path": "src/conductance_ctv/data/volume_io.py",
+      "bytes": 7450,
+      "sha256": "146168d6f30c08a67455bbf1d201f46d5d316bbc224f6c634157f27175982e1d"
+    },
+    {
+      "path": "src/conductance_ctv/evaluation/__init__.py",
+      "bytes": 2411,
+      "sha256": "93791629a46302ed2f459d691fec68f607aedc5913a84af40049b2348f1084cd"
+    },
+    {
+      "path": "src/conductance_ctv/evaluation/association.py",
+      "bytes": 13003,
+      "sha256": "621ce71ec025572d606fac23fe447377ec874f6b1378264da1792b388e9198d9"
+    },
+    {
+      "path": "src/conductance_ctv/evaluation/pipeline.py",
+      "bytes": 29805,
+      "sha256": "a7a89732f8b7c130b6299dffaba3bad74639fbaaccade353404edd271a8d8888"
+    },
+    {
+      "path": "src/conductance_ctv/evaluation/protocol.py",
+      "bytes": 14004,
+      "sha256": "407c258985cf66333bb721b451359d4d775c6d9e3609b4b6741d9428dd7fee9f"
+    },
+    {
+      "path": "src/conductance_ctv/evaluation/report.py",
+      "bytes": 5593,
+      "sha256": "09b39fef0b8698da1dae2b952eb9a43e559ac28683c6f1fcc901e4b01cbe10ff"
+    },
+    {
+      "path": "src/conductance_ctv/evaluation/tables.py",
+      "bytes": 24472,
+      "sha256": "9eb191ea9a276c251cb1f7e358b6ebb7b7a3d09a9266f9ed6209a6832ff9c10b"
+    },
+    {
+      "path": "src/conductance_ctv/hydraulics/__init__.py",
+      "bytes": 4132,
+      "sha256": "a6366462d8cd5b3c4b222fb10f461205f421b17ca86a980c40b953cbc1d864ab"
+    },
+    {
+      "path": "src/conductance_ctv/hydraulics/centerline.py",
+      "bytes": 8742,
+      "sha256": "d272495932b656ad9a5e6318fd1b545e76c364c8d0a5eeaef2934bcc85f154e6"
+    },
+    {
+      "path": "src/conductance_ctv/hydraulics/conductance.py",
+      "bytes": 10925,
+      "sha256": "41fd5e55c9638c7014fd4f10e3e7f96f0a9466986cbad9e3825a40462e54e6b1"
+    },
+    {
+      "path": "src/conductance_ctv/hydraulics/descriptors.py",
+      "bytes": 12776,
+      "sha256": "fd1be81341b89f571582e4a9caab1fe9f9635716f2b9cd27fe00a57beb5f150a"
+    },
+    {
+      "path": "src/conductance_ctv/hydraulics/dirichlet.py",
+      "bytes": 7067,
+      "sha256": "15dab78b1ecae6f788a623f895db14ee32e6b354b4fa407c45960501933e7ee1"
+    },
+    {
+      "path": "src/conductance_ctv/hydraulics/grid.py",
+      "bytes": 13494,
+      "sha256": "8784cefd012bfea3514cfbc8a3dfdd939bcb0e75f904b51acbf589fee259e7a4"
+    },
+    {
+      "path": "src/conductance_ctv/hydraulics/series.py",
+      "bytes": 8699,
+      "sha256": "b3a732d19115d585bbb7131fb99f90240f4cbfe24092e536ac1cc771777c11c6"
+    },
+    {
+      "path": "src/conductance_ctv/hydraulics/shapes.py",
+      "bytes": 6835,
+      "sha256": "cb8a453fafee05fd9584101e412f92a3214ee8f6923564cf4f6e39b47634acfb"
+    },
+    {
+      "path": "src/conductance_ctv/losses/__init__.py",
+      "bytes": 3380,
+      "sha256": "a63e2af77e6249d788eb62e2f14b5e7dba49ff0d5e139269fce6d93e4baffadd"
+    },
+    {
+      "path": "src/conductance_ctv/losses/class_balanced.py",
+      "bytes": 7949,
+      "sha256": "7024cc9400bb42bf6ba019109321063109b70c0b6714b29352b763e9f4fee431"
+    },
+    {
+      "path": "src/conductance_ctv/losses/segmentation.py",
+      "bytes": 7524,
+      "sha256": "e321bd80a94b48b1015e78a578a2520f9f5ba297823e26fe152086913526460b"
+    },
+    {
+      "path": "src/conductance_ctv/metrics/__init__.py",
+      "bytes": 3949,
+      "sha256": "3115641050e87fd7dd4684129753aa0f760eda7ffc51c4ca576098bb07836c03"
+    },
+    {
+      "path": "src/conductance_ctv/metrics/agreement.py",
+      "bytes": 7130,
+      "sha256": "d5e0f4df664e04e812765adc263c748ae9ec9f2f8bf1da29f83bd73d3ec4a84c"
+    },
+    {
+      "path": "src/conductance_ctv/metrics/bootstrap.py",
+      "bytes": 6576,
+      "sha256": "109d289dd339df531a58c0227f8de7a9a0bedc32164b2ee10d2573737d2898ec"
+    },
+    {
+      "path": "src/conductance_ctv/metrics/classification.py",
+      "bytes": 11104,
+      "sha256": "e084b821c66703e083c2b9f7b49d8438b976f3deefd9324664839937364ed134"
+    },
+    {
+      "path": "src/conductance_ctv/metrics/inference_stats.py",
+      "bytes": 16317,
+      "sha256": "5148416dc446d4167e6da5be4213e0ec67c03e9fd0f56fc07490bf578754a523"
+    },
+    {
+      "path": "src/conductance_ctv/metrics/multiplicity.py",
+      "bytes": 4408,
+      "sha256": "aa5edafa05eba5aaef647a1543084cdb92b0d18d050ad5b715a41d6b2c23a570"
+    },
+    {
+      "path": "src/conductance_ctv/metrics/segmentation.py",
+      "bytes": 9914,
+      "sha256": "5614823c365c7627b9453f0b98b3dee4c3d0c6ec1559950f1b5621e344472aac"
+    },
+    {
+      "path": "src/conductance_ctv/metrics/skeleton.py",
+      "bytes": 5595,
+      "sha256": "827bab7cf870b74475c41f9311e780008ff97b1dac891f088b8b3ad4ab664015"
+    },
+    {
+      "path": "src/conductance_ctv/metrics/special.py",
+      "bytes": 3892,
+      "sha256": "58fd3606edbfeded00c737136aff5d4ced7a8005fa542d8b85ba83d8094f81aa"
+    },
+    {
+      "path": "src/conductance_ctv/models/__init__.py",
+      "bytes": 3135,
+      "sha256": "b6dc120e7c2843071f7417bc7695e17b340d94a090be5c312b24325115c2ea61"
+    },
+    {
+      "path": "src/conductance_ctv/models/baselines.py",
+      "bytes": 16278,
+      "sha256": "b5e9f25fb379fa36aa26aa9faf257e04987d9329df86b7638852904ecb9a7a6c"
+    },
+    {
+      "path": "src/conductance_ctv/models/branches.py",
+      "bytes": 6582,
+      "sha256": "033247b15124250551636a5176568562df4b79b8858e4bde4fc0439e806ab56c"
+    },
+    {
+      "path": "src/conductance_ctv/models/classifier.py",
+      "bytes": 12968,
+      "sha256": "85bb7a59debd993eaf3b1a89a46144b90bd649aa3ae0591b68f30687dbb0df9e"
+    },
+    {
+      "path": "src/conductance_ctv/models/decoder.py",
+      "bytes": 6963,
+      "sha256": "f7a55e15674b60447dcdbbb9686419598115175ccb9af59829fd7f7087b60d21"
+    },
+    {
+      "path": "src/conductance_ctv/models/encoders.py",
+      "bytes": 28851,
+      "sha256": "884b38800c61c11fe3b608f5c266c3a2dd9d2e4fd8a00d58d3995424fc08af0f"
+    },
+    {
+      "path": "src/conductance_ctv/models/unet3d.py",
+      "bytes": 11033,
+      "sha256": "6311f370b672e58af81d38690c5c5b95b4643c8b7717e2a6ec76548408cef7a5"
+    },
+    {
+      "path": "src/conductance_ctv/training/__init__.py",
+      "bytes": 2403,
+      "sha256": "eb8594afc3caf3177cd22ee8bcce0ae567b6e6d8fbe6b161c585e9b7df21cf62"
+    },
+    {
+      "path": "src/conductance_ctv/training/checkpoint.py",
+      "bytes": 5468,
+      "sha256": "c642828279d5f1088e9b6b0c64f1da54c237745ff4f3f5e2d6e854abc30424db"
+    },
+    {
+      "path": "src/conductance_ctv/training/crossfit.py",
+      "bytes": 8592,
+      "sha256": "fed1de005a60782d01548b5c98ca33e053d5c92ecd4219bc0e1e90c5a5c1b78a"
+    },
+    {
+      "path": "src/conductance_ctv/training/distributed.py",
+      "bytes": 4227,
+      "sha256": "55863e04a4429a8e8d9820f6e2d8d7bcd75c365c30b33e6482a6a9460eb59c7a"
+    },
+    {
+      "path": "src/conductance_ctv/training/optim.py",
+      "bytes": 9683,
+      "sha256": "044a474a8d5405dd65c197d217eacb05729d969b84216e3866b7e4a7c978dd5f"
+    },
+    {
+      "path": "src/conductance_ctv/training/seed.py",
+      "bytes": 2266,
+      "sha256": "4605a8bf46a7cd1fb0cd6fa7f0ecfa1f19762d730c11d34833c3bb7b83af8caa"
+    },
+    {
+      "path": "src/conductance_ctv/training/trainer.py",
+      "bytes": 23064,
+      "sha256": "7850617f66c98f2962f19f7a8afedb1f17e5b3fdd35f2b51eac0dccd91c8c9b1"
+    },
+    {
+      "path": "src/conductance_ctv/utils/__init__.py",
+      "bytes": 191,
+      "sha256": "916795626b8d26474a31c1b2039d1ea0a2c3098024afbaf9adaf96d5197e9b8c"
+    },
+    {
+      "path": "src/conductance_ctv/utils/config.py",
+      "bytes": 7941,
+      "sha256": "201d021ada9ac65609f4f1cd759de5fe4861ee0860c078614fe93036a0e8f598"
+    },
+    {
+      "path": "src/conductance_ctv/utils/io.py",
+      "bytes": 3129,
+      "sha256": "c84293fc6d81a6257aa78f4ad121d7cdbd269038cd04684ee2cf974d1fe89dc6"
+    },
+    {
+      "path": "src/conductance_ctv/utils/logging_setup.py",
+      "bytes": 1188,
+      "sha256": "d058834587a917434bbb5faa83f0b967dc9d07695614ed262dee5542900c14af"
+    },
+    {
+      "path": "src/conductance_ctv/utils/numeric.py",
+      "bytes": 5166,
+      "sha256": "5c2557b8a966b854dea26c66170d95204aa99218a60eda2655f07c9000f5f508"
+    },
+    {
+      "path": "src/conductance_ctv/utils/types.py",
+      "bytes": 404,
+      "sha256": "cad2f45c8797fb410e0e38dafc44b84406cb3f1eedbc6a856f3b22c7a644e664"
+    },
+    {
+      "path": "src/conductance_ctv/verification/__init__.py",
+      "bytes": 1504,
+      "sha256": "b0322ff47a8c8c5ab540042c616dfdc5dd60ff4fea8e511526665c037a936373"
+    },
+    {
+      "path": "src/conductance_ctv/verification/artefacts.py",
+      "bytes": 6980,
+      "sha256": "03469b84d7502f8ea2c3673635a756a2cd30b4310764cf8a400ffc7f0d9735f3"
+    },
+    {
+      "path": "src/conductance_ctv/verification/checks.py",
+      "bytes": 98634,
+      "sha256": "409acf272059bf97c4848b37e39136b924f1cbf0a6b1986a251559dbd99b42e9"
+    },
+    {
+      "path": "src/conductance_ctv/verification/claims.py",
+      "bytes": 31287,
+      "sha256": "aff5a04871513fd321b84f7acd5a2d9aa8e4edfcfec216660e34ddc5ddb16604"
+    },
+    {
+      "path": "src/conductance_ctv/verification/probes.py",
+      "bytes": 3313,
+      "sha256": "b269465766fe0835c5b117c95ae159ece0ecda2c487df1eace086a6d0c1fbe1d"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 1079,
+      "sha256": "411c4884c490e289748763dbd1698533e2e5542d95021985bf8ef031545c61a1"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "bytes": 7488,
+      "sha256": "b803b647f4a6a6649b4e2097d1f41c9406f417d6c03d041fd1de6dcd2a8dab42"
+    },
+    {
+      "path": "tests/test_dataset_and_transforms.py",
+      "bytes": 8445,
+      "sha256": "c59ef7fb7c0e73eeac47a9c9b736fc7e9a049e58a039244f3dacb15f9e8a4fdf"
+    },
+    {
+      "path": "tests/test_evaluation.py",
+      "bytes": 12730,
+      "sha256": "671f6b2dbc251c397daccf9f293d5689825f1e93b88814dd1b8eeb50ed55f6f4"
+    },
+    {
+      "path": "tests/test_fixture_data.py",
+      "bytes": 9688,
+      "sha256": "b94b34de98bdec84c916c7eda932418e06933af190cd08edfaceea7172358e9a"
+    },
+    {
+      "path": "tests/test_hydraulics.py",
+      "bytes": 9123,
+      "sha256": "1ef64f5b91b3d1f4dcc5866771f02705fc95c8b7bfc8618322ee1149e9798aba"
+    },
+    {
+      "path": "tests/test_inference_and_bootstrap.py",
+      "bytes": 11562,
+      "sha256": "a0b45e4669a2a39137c8e2705a19c5eec55d70db7670a7f8892b44422772649a"
+    },
+    {
+      "path": "tests/test_losses.py",
+      "bytes": 7721,
+      "sha256": "287ea39d74ccae1c0e901bd7404fa74044a94c1372af6d6d099c24cd496ff164"
+    },
+    {
+      "path": "tests/test_metrics.py",
+      "bytes": 13155,
+      "sha256": "11359c5b674aed329f66f8e8fb87395b614e9e597e409974b6f97f9b4eb0b060"
+    },
+    {
+      "path": "tests/test_models.py",
+      "bytes": 14688,
+      "sha256": "e92a18f0cb727cfca876f6a6ab5c7e66daf2c66e5789a5ea80854e64adbf63f2"
+    },
+    {
+      "path": "tests/test_series_and_descriptors.py",
+      "bytes": 13108,
+      "sha256": "e5206d90b1754a4afe2a26446e063b318b3cf65e1891033249e41104de2f2355"
+    },
+    {
+      "path": "tests/test_training_smoke.py",
+      "bytes": 13281,
+      "sha256": "7287c729e0dfeb606de1f580d85a61634655d109cae102f437b4341392872084"
+    },
+    {
+      "path": "tests/test_verification.py",
+      "bytes": 7997,
+      "sha256": "87e160799a79b6339c91441c0b9b0d47621c56fb30e2482e7f5184af0bdcfe00"
+    },
+    {
+      "path": "verification_report.json",
+      "bytes": 39138,
+      "sha256": "07ba2ce00fb594b445847013b33f2778e3f1ce5fbd9901de48078a2b7f79ef18"
+    },
+    {
+      "path": "verification_summary.txt",
+      "bytes": 4107,
+      "sha256": "0472a6b13b280a885986cd663d7af36337864eeb6fd892b559f8a204a2fc7f0a"
+    }
+  ]
+}

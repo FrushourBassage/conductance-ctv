@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conductance-ctv"
+version = "1.0.0"
+description = "Hydraulic morphometry, four-type 3D-CTV classification and evaluation for iliac vein lesions"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [{ name = "the 3D-CTV study group" }]
+keywords = ["computed tomography venography", "iliac vein", "hydraulic conductance", "morphometry"]
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "numpy>=1.26",
+    "PyYAML>=6.0",
+    "scikit-learn>=1.3",
+    "torch>=2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0",
+    "mypy>=1.10",
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+conductance-ctv-hydraulics = "conductance_ctv.cli.hydraulics:main"
+conductance-ctv-architectures = "conductance_ctv.cli.architectures:main"
+conductance-ctv-train = "conductance_ctv.cli.train:main"
+conductance-ctv-evaluate = "conductance_ctv.cli.evaluate:main"
+conductance-ctv-verify = "conductance_ctv.cli.verify:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4", "SIM", "RET", "NPY", "TID"]
+ignore = ["B008", "SIM108"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501", "NPY002"]
+# The seeding module manages the legacy global NumPy generator on purpose: it is
+# the state a resumed run has to restore, so get_state/set_state are the point.
+"src/conductance_ctv/training/seed.py" = ["NPY002"]
+
+[tool.black]
+line-length = 120
+target-version = ["py312"]
+
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src/conductance_ctv"]
+warn_unreachable = true
+disallow_untyped_decorators = true
+plugins = []
+exclude = ["src/conductance_ctv/_vendor"]
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*", "yaml"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["torch.*"]
+follow_imports = "silent"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]

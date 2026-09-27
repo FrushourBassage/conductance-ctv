@@ -1,0 +1,70 @@
+Conductance-3D-CTV verification summary
+========================================
+overall status : PARTIALLY_VERIFIED
+code status    : VERIFIED
+paper status   : VERIFIED
+checks         : 54
+by status      : {'PASS': 49, 'NOT_RUN': 5}
+by family      : {'paper': {'PASS': 34}, 'code': {'PASS': 15, 'NOT_RUN': 5}}
+
+check                                        family status   
+----------------------------------------------------------------------
+artefact_hygiene                             code   PASS     
+checkpoint_roundtrip                         code   PASS     
+cli_hydraulics                               code   PASS     
+clinical_cohort_values                       code   NOT_RUN  
+config_integrity                             code   PASS     
+container_build                              code   NOT_RUN  
+data_generation                              code   PASS     
+gpu_scale_run                                code   NOT_RUN  
+mask_rendering                               code   PASS     
+pipeline_tables                              code   PASS     
+pretraining_run                              code   NOT_RUN  
+private_cohort_absent                        code   PASS     
+provenance_and_licence                       code   PASS     
+reader_arm_human                             code   NOT_RUN  
+resolution_ladder                            code   PASS     
+segmenter_forward_and_backward               code   PASS     
+single_batch_overfit                         code   PASS     
+solver_matches_closed_form                   code   PASS     
+training_smoke_two_steps                     code   PASS     
+type_training_and_calibration                code   PASS     
+calibration_behaviour                        paper  PASS     
+chi2_reference_values                        paper  PASS     
+class_balanced_weights                       paper  PASS     
+clustered_resampling                         paper  PASS     
+confluence_weighting                         paper  PASS     
+crossfit_disjointness                        paper  PASS     
+dataset_provenance                           paper  PASS     
+decision_rule_arithmetic                     paper  PASS     
+delong_matches_direct                        paper  PASS     
+descriptor_family_split                      paper  PASS     
+descriptor_layout                            paper  PASS     
+dimensionless_invariance                     paper  PASS     
+geometric_only                               paper  PASS     
+icc_arithmetic                               paper  PASS     
+lesion_type_definitions                      paper  PASS     
+manufactured_solution                        paper  PASS     
+model_branch_wiring                          paper  PASS     
+paired_comparisons                           paper  PASS     
+parameter_resolution                         paper  PASS     
+per_type_reporting                           paper  PASS     
+polya_szego_bounds                           paper  PASS     
+prespecified_constants                       paper  PASS     
+propagated_error                             paper  PASS     
+proposed_total                               paper  PASS     
+reader_records                               paper  PASS     
+segment_units                                paper  PASS     
+segmentation_metrics                         paper  PASS     
+series_resistance_arithmetic                 paper  PASS     
+severity_independent_of_appearance           paper  PASS     
+shape_factor_range                           paper  PASS     
+solver_rectangle_series                      paper  PASS     
+split_disjointness                           paper  PASS     
+star_selection                               paper  PASS     
+temperature_scaling                          paper  PASS     
+----------------------------------------------------------------------
+outstanding: clinical_cohort_values, pretraining_run, gpu_scale_run, container_build, reader_arm_human
+
+A NOT_RUN or BLOCKED entry names a quantity this environment cannot produce;
+it is never a substitute for a PASS and never reported as one.

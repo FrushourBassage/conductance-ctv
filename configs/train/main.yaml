@@ -1,0 +1,29 @@
+# Training profile. The manuscript reports 214 A100 GPU-hours for the full run
+# and a 133.6 M parameter model, and does not report batch size, learning rate,
+# schedule, epoch count or precision. Every value below that the manuscript does
+# not state is an engineering default, marked as such in claim_to_code.json.
+epochs: 200
+batch_size: 8
+grad_accumulation: 2
+effective_batch_size: 16
+learning_rate: 0.0003
+backbone_learning_rate: 0.00006
+weight_decay: 0.0001
+warmup_epochs: 5.0
+optimizer: adamw
+scheduler: warmup_cosine
+precision: bf16
+grad_clip: 1.0
+ema_decay: 0.999
+patience: 0
+num_workers: 2
+seed: 20260101
+deep_supervision: false
+loss: confluence_dice_ce
+confluence_inside_weight: 3.0
+class_balance_beta: 0.999
+fairness_weight: 0.0
+severity_weight: 0.3
+label_smoothing: 0.0
+freeze_backbone: false
+augment: true
