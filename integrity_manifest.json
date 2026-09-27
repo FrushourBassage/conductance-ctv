@@ -1,11 +1,11 @@
 {
   "root": ".",
   "file_count": 143,
-  "total_bytes": 929519,
+  "total_bytes": 929210,
   "excluded": [
     "integrity_manifest.json"
   ],
-  "manifest_digest": "46a6f94e1657b489013f7a08f1392f158e03443ca86fd69f66f3ae354d9ae80b",
+  "manifest_digest": "9c6bb85bc4d6e0caafc72a13915fa3acc891662d295e6c077ed5a9162c6de95c",
   "files": [
     {
       "path": ".gitignore",
@@ -24,8 +24,8 @@
     },
     {
       "path": "LICENSE",
-      "bytes": 1388,
-      "sha256": "b68bf072d9763e0fca4bdc83b340b2d8c7120ea00f854b357c5dd0fe2bf35f26"
+      "bytes": 1079,
+      "sha256": "63f160b8637294a9e5fc2d437976b28c0aa92d0c02dad3a72309755378268a1d"
     },
     {
       "path": "NOTICE",
